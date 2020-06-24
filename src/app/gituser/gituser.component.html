@@ -1,0 +1,32 @@
+<div class="container">
+  <ng-progress></ng-progress>
+  <h1>GTHUB USERS</h1>
+  <hr>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div *ngFor='let gituser of gitusers;let i = index'>
+        <div>
+          <h6 id={{i}} appStrikethrough>{{gituser.name}} due on {{gituser.completeDate|date|uppercase}}</h6>
+          <button class="btn btn-primary" (click)='goToUrl(gituser.id)'>View Details</button>
+          <button class="btn btn-outline-danger" (click)='deleteGituser(i)'>Delete</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <app-gituser-form (addGituser)="addNewGituser($event)"></app-gituser-form>
+    </div>
+  </div>
+  <p *ngIf='goals.length > 5'>You have too many usernames</p>
+  <div class="row">
+    <blockquote class="blockquote text-center">
+      <p class="mb-0">{{quote.quote}}</p>
+      <footer class="blockquote-footer"><cite>{{quote.author}}</cite></footer>
+    </blockquote>
+  </div>
+</div>
+
+
+
+
+

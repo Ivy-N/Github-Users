@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <h2 class="text-center">Github User Details</h2>
+    <hr>
+    <form (ngSubmit)='submitGituser()' #gituserForm='ngForm'>
+        <div class="form-group">
+  
+            <label for="username">Github Username</label>
+            <input type="text" class="form-control" id="username" [(ngModel)]="newGituser.username" name="username" #username='ngModel' required>
+            <div [hidden]="username.valid || username.pristine" class="alert alert-danger">
+              <p>Github username is required</p>
+            </div>
+        </div>
+        <div class="form-group">
+  
+            <label for="repositoryname">Repository name</label>
+            <textarea class="form-control" id="repositoryname" rows="4" [(ngModel)]="newGituser.repositoryname" name="repositoryname" #repositoryname="ngModel" required></textarea>
+            <div [hidden]="repositoryname.valid || repositoryname.pristine" class="alert alert-danger">
+              <p>Repository name is required</p>
+            </div>
+        </div>
+        <div class="form-group">
+  
+            <label for="complete">Date Viewed</label>
+            <input type='date' id="complete" [(ngModel)]="newGituser.completeDate" name="completeDate" #completeDate="ngModel" required>
+            <div [hidden]="completeDate.valid || completeDate.pristine" class="alert alert-danger">
+              <p>Date is required</p>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success">Add Github Username</button>
+    </form>
+  </div>

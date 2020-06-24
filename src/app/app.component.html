@@ -1,0 +1,11 @@
+<div>
+  <h1>Github Users</h1>
+  <hr>
+  <ul>
+      <li *ngFor='let gituser of gitusers'>
+        {{gituser.username}}
+        <app-navbar></app-navbar>
+        <router-outlet></router-outlet>
+      </li>
+  </ul>
+</div>
